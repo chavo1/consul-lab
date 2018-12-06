@@ -63,6 +63,28 @@ agent-two.node.consul.  0       IN      TXT     "consul-network-segment="
 ;; MSG SIZE  rcvd: 102
 ```
 - To leave a cluster use "Ctrl-C"
-## Defining Checks
+## Defining Checks - create to files into the consul.d directory
+```
+echo '{"check": {"name": "ping",
+  "args": ["ping", "-c1", "google.com"], "interval": "30s"}}' \
+  >consul.d/ping.json
+
+echo '{"service": {"name": "web", "tags": ["rails"], "port": 80,
+  "check": {"args": ["curl", "localhost"], "interval": "10s"}}}' \
+  >consul.d/web.json
+  ```
+## Restart the second agent, reload it with "consul reload".
+```
+    [INFO] agent: Synced service 'web'
+    [INFO] agent: Synced check 'service:web'
+    [INFO] agent: Synced check 'ping'
+    [WARN] Check 'service:web' is now critical
+```
+# Check the health status via API
+```
+curl http://localhost:8500/v1/health/state/critical
+```
+## KV Data
+```
 
 
