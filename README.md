@@ -84,7 +84,5 @@ echo '{"service": {"name": "web", "tags": ["rails"], "port": 80,
 ```
 curl http://localhost:8500/v1/health/state/critical
 ```
-## KV Data
-```
 
 
