@@ -63,7 +63,7 @@ agent-two.node.consul.  0       IN      TXT     "consul-network-segment="
 ;; MSG SIZE  rcvd: 102
 ```
 - To leave a cluster use "Ctrl-C"
-## Defining Checks - create to files into the consul.d directory
+## Defining Checks - create two files into the consul.d directory
 ```
 echo '{"check": {"name": "ping",
   "args": ["ping", "-c1", "google.com"], "interval": "30s"}}' \
