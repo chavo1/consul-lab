@@ -3,8 +3,8 @@ Vagrant.configure(2) do |config|
 
     1.upto(2) do |n|
       config.vm.define "consul0#{n}" do |box|
-        box.vm.hostname = "consul#{n}"
-        box.vm.network "private_network", ip: "192.168.56.5#{n}"
+        box.vm.hostname = "consul0#{n}"
+        box.vm.network "private_network", ip: "192.168.56.#{50+n}"
 
         box.vm.provision "shell", inline: <<-SCRIPT
             apt-get update
