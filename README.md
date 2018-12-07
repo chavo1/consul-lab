@@ -1,7 +1,7 @@
 # consul-vagrant
 
 ## Starting the agent in the first node
-- Login in consul01
+- Login to consul01
 ```
 $ vagrant ssh consul01
 $ sudo su -
