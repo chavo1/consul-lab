@@ -14,7 +14,7 @@ consul agent -server -bootstrap-expect=1 \
     -enable-script-checks=true -config-dir=consul.d
 ```
 ## Starting the agent in the second node
-- Login in consul02
+- Login to consul02
 ```
 $ vagrant ssh consul02
 $ sudo su -
